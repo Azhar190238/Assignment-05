@@ -286,7 +286,7 @@
                                     <td>550</td>
                                 </tr>
                                 <!-- row 5 -->
-                                <tr id="final-info" class="text-black ">
+                                <tr id="final-info" class="text-black hidden">
                                     <td>Total Prices</td>
                                     <td></td>
                                     <td>BDT <span id="total-taka">550</span></td>
@@ -294,12 +294,12 @@
                         </table>
                     </div>
                     <label class="input input-bordered flex items-center gap-1 w-[420px]  mr-0 h-14">
-                        <input type="text" class="grow" placeholder="Have any coupon?" />
-                        <span class="btn mr-0 px-8 h-1 bg-[#1DD100] text-white">Apply</span>
+                        <input type="text" class="grow" id="haveCoupon" placeholder="Have any coupon?" />
+                        <span id="apply-info" class="btn mr-0 px-8 h-1 bg-[#1DD100] text-white">Apply</span>
                     </label>
                     <div class="flex justify-between text-black mr-20 ml-6 my-3">
                         <p>Grand Total</p>
-                        <p>BDT 0</p>
+                        <p class="grand-total">BDT 0</p>
                     </div>
                 </div>
                 <!-- Input form -->
@@ -322,7 +322,6 @@
                     </div>
                     <input type="email" placeholder="Enter Your E-mail" class="input input-bordered w-[430px]" />
                 </label>
-
                 <!--Button -->
                <a href="success.html"> <button class="btn my-4 w-[430px] bg-[#1DD100]">Next</button> </a>
 
