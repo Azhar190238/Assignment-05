@@ -51,21 +51,21 @@
         <!-- Nav end -->
         <!-- Banner Start -->
         <div class="relative text-center">
-            <img class="w-full" src="images/banner.png" />
-            <h1 class="absolute text-5xl font-extrabold text-white top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <img class="w-auto lg:w-full" src="images/banner.png" />
+            <h1 class="absolute text-2xl lg:text-5xl font-extrabold text-white top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 End-to-End Travel with <br> <span class=" text-[#1DD100]">P Paribahan</span> </h1>
             <p class="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white ">Yes, you can run unit
                 tests and view the results directly within the app. <br> The integrated testing features allow for a
                 streamlined .</p>
             <a href="#paribahan"><button class="absolute bottom-36 left-1/2  p-4 rounded-2xl bg-[#1DD100] text-black font-bold text-xl -translate-x-1/2 -translate-y-1/2"> <span id="ticket">Buy Tickets</span></button></a>
-            <div class="relative flex flex-col lg:flex-row gap-3 items-center justify-center">
+            <div class="relative flex flex-col lg:flex-row lg:gap-3 items-center justify-center">
 
 
                 <!-- card 1 -->
-                <div class="absolute -top-10 left-36 card px-4 card-side bg-base-100 shadow-2xl border-b-green-800 border-b-4">
+                <div class="absolute -top-10 left-36 card lg:px-4 card-side bg-base-100 shadow-2xl border-b-green-800 border-b-4">
                     <figure><img src="images/people.png" alt="Movie" /></figure>
                     <div class="card-body">
-                        <h1 class="font-bold text-3xl text-black mr-0">500K+</h1>
+                        <h1 class="font-bold text-xl lg:text-3xl text-black mr-0">500K+</h1>
                         <p>Registered users</p>
                     </div>
                 </div>
@@ -255,7 +255,7 @@
                             <!-- head -->
                             <thead>
                                 <tr class=" text-black font-bold">
-                                    <th>Seat</th>
+                                    <th>Seat <span id="seat-number" class="bg-[#1DD100] text-white font-bold text-xl hidden">0</span></th>
                                     <th>Class</th>
                                     <th>Prices</th>
                                 </tr>
@@ -285,21 +285,21 @@
                                     <td>Economoy</td>
                                     <td>550</td>
                                 </tr>
-                                <!-- row 5 -->
+                                <!-- row 4 -->
                                 <tr id="final-info" class="text-black hidden">
                                     <td>Total Prices</td>
                                     <td></td>
-                                    <td>BDT <span id="total-taka">550</span></td>
+                                    <td>BDT <span id="total-taka">1100</span></td>
                             </tbody>
                         </table>
                     </div>
-                    <label class="input input-bordered flex items-center gap-1 w-[420px]  mr-0 h-14">
+                    <label id="coupon" class="input input-bordered flex items-center gap-1 w-[420px]  mr-0 h-14">
                         <input type="text" class="grow" id="haveCoupon" placeholder="Have any coupon?" />
-                        <span id="apply-info" class="btn mr-0 px-8 h-1 bg-[#1DD100] text-white">Apply</span>
+                        <span onclick=" couponApply()" id="apply-info" class="btn mr-0 px-8 h-1 bg-[#1DD100] text-white">Apply</span>
                     </label>
                     <div class="flex justify-between text-black mr-20 ml-6 my-3">
                         <p>Grand Total</p>
-                        <p class="grand-total">BDT 0</p>
+                        <p id="grand-total">BDT 0</p>
                     </div>
                 </div>
                 <!-- Input form -->
@@ -309,12 +309,12 @@
                     </div>
                     <input type="text" placeholder="Enter Your Name" class="input input-bordered w-[430px]" />
                 </label>
-                <label>
+                <label >
                     <div class="label">
                         <span class="label-text font-bold">Mobile Number</span>
                     </div>
-                    <input type="number" placeholder="Enter Your Mobile Number"
-                        class="input input-bordered w-[430px]" />
+                    <input id="mobile-number" type="number" placeholder="Enter Your Mobile Number"
+                        class="input input-bordered w-[430px]"/>
                 </label>
                 <label>
                     <div class="label">
@@ -322,9 +322,9 @@
                     </div>
                     <input type="email" placeholder="Enter Your E-mail" class="input input-bordered w-[430px]" />
                 </label>
-                <!--Button -->
-               <a href="success.html"> <button class="btn my-4 w-[430px] bg-[#1DD100]">Next</button> </a>
 
+                
+                <a href="success.html">  <button class="btn my-4 w-[430px] bg-[#1DD100]">Next</button></a>
                 <div class="flex justify-between mr-16">
                     <a href=""><u>Terms and Conditions</u></a>
                     <a href=""><u>Cancellation Policy</u></a>
@@ -344,8 +344,6 @@
                 <div class="flex gap-5 border-[2px] border-white rounded-xl p-3">
                     <a><img src="images/playstore.png" alt=""></a>
                     <h3>Get in one <br> <span class="text-3xl">Google Play</span></h3>
-
-
                 </div>
             </div>
         </div>

@@ -3,46 +3,53 @@ function buyTicket() {
     document.addEventListener('click', handleKeyboardButtonPress);
 }
 let totalSeat = 41;
-function handleKeyboardButtonPress(event){
+function handleKeyboardButtonPress(event) {
     const pressButton = event.target.id;
 
     totalSeat--;
-    if (totalSeat > 36) {
+    if ((totalSeat > 36) && (pressButton.length == 2)) {
         addBackgroundById(pressButton);
-    }
-    seatCount++;
-    if (seatCount === 1) {
-        showSeat1(pressButton);
-        calculateTaka(550); // Add 550 to the total
-        totalInfo(total);
-    }
-        
-    
-    if (seatCount === 2) {
-        showSeat2(pressButton);
-        calculateTaka(550); // Add 550 to the total
-        totalInfo(total);
-       
-    }
-    if (seatCount === 3) {
-        showSeat3(pressButton);
-        calculateTaka(550); // Add 550 to the total
-        totalInfo(total);
-    }
-    if (seatCount === 4) {
-        showSeat4(pressButton);
-        calculateTaka(550); // Add 550 to the total
-        totalInfo(total);
-        handleCouponInput();
-    }
-    // if(seatCount > 4){
-    //     alert('You can only select a maximum of four seats')
-    // }
-}
 
+        
+
+        seatCount++;
+        if (seatCount === 1) {
+            showSeat1(pressButton);
+            calculateTaka(550); // Add 550 to the total
+            totalInfo(total);
+            grandTotal(total);
+        }
+
+
+        if (seatCount === 2) {
+            showSeat2(pressButton);
+            calculateTaka(550); // Add 550 to the total
+            totalInfo(total);
+            grandTotal(total);
+
+        }
+        if (seatCount === 3) {
+            showSeat3(pressButton);
+            calculateTaka(550); // Add 550 to the total
+            totalInfo(total);
+            grandTotal(total);
+        }
+        if (seatCount === 4) {
+            showSeat4(pressButton);
+            calculateTaka(550); // Add 550 to the total
+            totalInfo(total);
+            grandTotal(total);
+            handleCouponInput();
+        }
+    }
+    // nextWork(pressButton);
+}
+let countSeat = 0;
 function addBackgroundById(idElement) {
     let count = 1;
     seatAllocated(count);
+    countSeat++;
+    seatCountShow(countSeat);
     const element = document.getElementById(idElement);
     element.classList.add('bg-[#1DD100]');
 }
@@ -81,44 +88,57 @@ function showSeat4(seatName) {
     element.innerText = seatName;
 }
 
-//total price
-
 function totalInfo(total) {
     const finalInfo = document.getElementById('final-info');
     finalInfo.classList.remove('hidden');
     const element = document.getElementById('total-taka');
     element.innerText = total;
-  }
-  
-  let total = 0;
-  
-  function calculateTaka(value) {
+
+}
+function grandTotal(total) {
+    const element2 = document.getElementById('grand-total');
+    element2.innerText = total;
+}
+
+let total = 0;
+
+function calculateTaka(value) {
     total = total + value;
     return total;
-  }
-// cuPhone
+}
 
+function seatCountShow(value) {
+    const element = document.getElementById('seat-number');
+    element.innerText = value;
+    element.classList.remove('hidden');
+}
 
-
-
-// // Function to handle input event
 function handleCouponInput() {
     const couponInput = document.getElementById('haveCoupon');
-    const couponCode = couponInput.value.trim(); // Get the entered coupon code and trim any leading or trailing spaces
-    total=2200;
-    // Check if the entered coupon code is valid
+    const couponCode = couponInput.value.trim(); 
+
+
     if (couponCode === 'NEW15') {
         const discount = total * 0.15;
         const finalTaka = total - discount;
-        applyInfo(finalTaka); // Update the grand total with discounted amount
+        applyInfo(finalTaka);
+        removeId(); 
     } else if (couponCode === 'Couple 20') {
         const discount = total * 0.20;
         const finalTaka = total - discount;
-        applyInfo(finalTaka); // Update the grand total with discounted amount
+        applyInfo(finalTaka);
+        removeId();
     } else {
-        // No coupon entered, update the grand total without any discount
+
         applyInfo(total);
+        //  alert('You have no coupon so be quite');
     }
+
+
+}
+function removeId() {
+    const element = document.getElementById('coupon');
+    element.classList.add('hidden');
 }
 
 // Function to update grand total
@@ -132,4 +152,11 @@ function applyInfo(total) {
 
 
 // Add event listener to the coupon input field
-document.getElementById('haveCoupon').addEventListener('input', handleCouponInput);
+
+document.getElementById('haveCoupon').addEventListener('click', handleCouponInput);
+
+function seatCountShow(value) {
+    const element = document.getElementById('seat-number');
+    element.innerText = value;
+    element.classList.remove('hidden');
+}
