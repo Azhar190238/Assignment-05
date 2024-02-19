@@ -255,7 +255,7 @@
                             <!-- head -->
                             <thead>
                                 <tr class=" text-black font-bold">
-                                    <th>Seat <span id="seat-number" class="bg-[#1DD100] text-white font-bold text-xl hidden">0</span></th>
+                                    <th>Seat <span id="seat-number" class="bg-[#1DD100] text-white font-bold text-xl rounded-full ">0</span></th>
                                     <th>Class</th>
                                     <th>Prices</th>
                                 </tr>
@@ -286,10 +286,16 @@
                                     <td>550</td>
                                 </tr>
                                 <!-- row 4 -->
-                                <tr id="final-info" class="text-black hidden">
+                                <tr id="final-info" class="text-black ">
                                     <td>Total Prices</td>
                                     <td></td>
-                                    <td>BDT <span id="total-taka">1100</span></td>
+                                    <td>BDT <span id="total-taka">0</span></td>
+                                </tr>
+                                <tr id="discount-info" class="text-black hidden ">
+                                    <td>Discount Price</td>
+                                    <td></td>
+                                    <td>BDT <span id="total-discount">0</span></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -297,9 +303,11 @@
                         <input type="text" class="grow" id="haveCoupon" placeholder="Have any coupon?" />
                         <span onclick=" couponApply()" id="apply-info" class="btn mr-0 px-8 h-1 bg-[#1DD100] text-white">Apply</span>
                     </label>
-                    <div class="flex justify-between text-black mr-20 ml-6 my-3">
-                        <p>Grand Total</p>
-                        <p id="grand-total">BDT 0</p>
+                    <div class="flex justify-between text-black mr-20 ml-4 my-3">
+                        <p class="text-sm">Grand Total</p>
+                        <!-- <td></td> -->
+                        <p class="text-sm">BDT <span id="grand-total">0</span></p>
+                        <!-- <p id="grand-total"> 0</p> -->
                     </div>
                 </div>
                 <!-- Input form -->

@@ -121,11 +121,13 @@ function handleCouponInput() {
     if (couponCode === 'NEW15') {
         const discount = total * 0.15;
         const finalTaka = total - discount;
+        discountInfo(discount);
         applyInfo(finalTaka);
         removeId(); 
     } else if (couponCode === 'Couple 20') {
         const discount = total * 0.20;
         const finalTaka = total - discount;
+        discountInfo(discount);
         applyInfo(finalTaka);
         removeId();
     } else {
@@ -147,6 +149,14 @@ function applyInfo(total) {
     finalInfo.classList.remove('hidden');
     const element = document.getElementById('grand-total');
     element.innerText = total;
+}
+
+// for discount
+function discountInfo(discount){
+    const finalInfo = document.getElementById('discount-info');
+    finalInfo.classList.remove('hidden');
+    const element = document.getElementById('total-discount');
+    element.innerText = discount;
 }
 
 
